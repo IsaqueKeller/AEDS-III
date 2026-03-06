@@ -2,7 +2,33 @@
 using namespace std;
 
 void changePositions (int* vector , int position , int size , int quantity) {
+    for (int i = position; i < size; i++) {
+    vector[i+1] = vector[i];
+    }
+}
+
+void initiateVector (int* vector , int position , int size , int quantity) {
+    for (int i = 0; i < size; i++) {
+        vector[i] = 0;
+    }
+}
+
+void fillVector (int* vector , int position , int size , int quantity) {
+for (int i = 0; i < size; i++) {
+    cout << "Type the position you want to insert your information: " << endl;
+    cin >> position;    
+
+    if (vector[position] == 0) {
+    cout << "Type in your information: " << endl;
+    cin >> vector[position];
+    }
+    else {
+    changePositions(vector, position, size, quantity);
+    cout << "Type in your information: " << endl;
+    cin >> vector[position];
+    }
     
+    }
 }
 
 int main () {
@@ -16,18 +42,16 @@ int position;
 
 vector = new int [size];
 
+initiateVector(vector, position, size, quantity);
+fillVector (vector, position, size, quantity);
+cout << endl;
+cout << "Vector: " << endl;
 for (int i = 0; i < size; i++) {
-    cout << "Type the position you want to insert your information: " << endl;
-    cin >> position;    
+    if (i != size-1)
+    cout << vector[i] << ", ";
 
-    if (vector[position] = -1) {
-    cout << "Type in your information: " << endl;
-    cin >> vector[position];
-    }
-    else {
-    
-    }
-    
+    else 
+    cout << vector[i];
 }
 }
 
