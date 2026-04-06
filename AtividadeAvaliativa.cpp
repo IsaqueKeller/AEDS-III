@@ -3,6 +3,8 @@
 #include <stdlib.h>
 using namespace std;
 
+//Dupla : Isaque Keller e Jose Marcio Domiciano
+
 void print_array(int *s, int n) {
     for (int i = 0; i < n; i++){
     	cout << s[i] << ",";
